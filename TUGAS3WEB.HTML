@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Tugas3 PWEB B </title>
+<p>tes table filter</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<p>input nama tim atau nama pembalap yang ingin dicari:</p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>no. urut</th>
+      <th>nama pembalap</th>
+      <th>Tim</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    <tr>
+      <td>001</td>
+      <td>Rossi</td>
+      <td>Yamaha</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>Marques</td>
+      <td>Honda Repsol</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>Lorenzo</td>
+      <td>Ducati</td>
+    </tr>
+    <tr>
+      <td>004</td>
+      <td>Vinalez</td>
+      <td>Yamaha Satelite</td>
+    </tr>
+<tr>
+      <td>005</td>
+      <td>Biaggi</td>
+      <td>Ducati Evo</td>
+    </tr>
+  </tbody>
+</table>
+  
+
+<p>tes atribut</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#detik").attr("href", "https://oto.detik.com/otosport/d-4226960/ban-michelin-belum-nyetel-dengan-motor-rossi-dan-vinales");
+    });
+});
+</script>
+
+<p><a href="https://oto.detik.com/" id="detik">berita_Otomotif</a></p>
+<button>Ganti topik berita</button>
+<p>tes animasi.</p>
+		<script> 
+			$(document).ready(function(){
+			$("#show").hide();
+			$("#pic").click(function(){
+			$("#hide").hide();
+			$("#show").show();$("#pic").animate({top: '500px'});$("#pic").animate({left: '500px'});$("#pic").animate({left: '500px',top: '500px'}); });});
+		</script> 
+	
+		<p id="hide">Klik gambar mobil ini</p>
+		<p id="show">mobil meluncur</p>
+		<img id="pic" src="mbil.png" style="height:100px;width:100px;position:absolute">
+	</body>
+</html>
